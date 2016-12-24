@@ -284,6 +284,11 @@ You can also create list data from associations that can be reached with joins::
         'keyField' => 'id',
         'valueField' => 'author.name'
     ])->contain(['Authors']);
+    
+.. tip::
+    When using fields from associated tables remember to use the name of the 
+    relationship attribute, for example: write 'author.name' and **not** 
+    'Authors.name' which is the field used in SQL.
 
 Lastly it is possible to use closures to access entity mutator methods in your
 list finds. This example shows using the ``_getFullName()`` mutator method from
